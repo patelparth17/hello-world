@@ -1,0 +1,62 @@
+public class CheckingAccount
+{
+    float init_bal=10000;
+}
+
+public class SavingsAccount
+{
+    float in_bal=20000;
+    public void add_money(int t)
+    { 
+        System.out.println("Enter money to be added:");
+        try
+        {
+            for(i=1; i<100;i++)
+            if(t!=500*i)
+            break;
+        }
+        catch(int t)
+        {
+            System.out.println("Enter amount in multiple of 500 or The daily creditable limit has exceeded.");
+        }
+        in_bal+=t; //now update in_bal to bal
+        
+    }
+    public void withdraw_money(int w)
+    {
+        System.out.println("Enter money to be withdrawn:");
+        try
+        {
+            for(i=1;i<40;i++)
+            if(w!=500*i)
+            break;
+        }
+        catch(int w)
+        {
+            System.out.println("Enter amount in multiple of 500 or The daily debitable limit has exceeded.");
+        }
+        in_bal-=w; //now update in_bal to bal
+    }
+}
+
+public class Main
+{
+public static void main(String args[])
+{
+    System.out.println("What do you want to execute? Press C for credit and D for debit.");
+    getc(char c);
+    SavingsAccount s = new SavingsAccount();
+    switch(c)
+    {
+        case 'C':
+        s.add_money(int t);
+        break;
+    case 'D':
+        s.withdraw_money(int w);
+        break;
+    default:
+        System.out.println("Enter appropriate choice");
+        break;
+    }
+}
+}
